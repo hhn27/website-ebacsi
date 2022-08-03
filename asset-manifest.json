@@ -1,7 +1,7 @@
 {
   "main.css": "/static/css/main.fc2d1065.chunk.css",
-  "main.js": "/static/js/main.857a3a32.chunk.js",
-  "main.js.map": "/static/js/main.857a3a32.chunk.js.map",
+  "main.js": "/static/js/main.8e1dfbcc.chunk.js",
+  "main.js.map": "/static/js/main.8e1dfbcc.chunk.js.map",
   "static/js/1.1497e999.chunk.js": "/static/js/1.1497e999.chunk.js",
   "static/js/1.1497e999.chunk.js.map": "/static/js/1.1497e999.chunk.js.map",
   "static/js/2.b53fc4a8.chunk.js": "/static/js/2.b53fc4a8.chunk.js",
@@ -28,6 +28,6 @@
   "static/media/Website---eBacsi---final---cut_14.png": "/static/media/Website---eBacsi---final---cut_14.2b1476ec.png",
   "static/css/main.fc2d1065.chunk.css.map": "/static/css/main.fc2d1065.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.cec2a6285d7d4d454289d5468960e99a.js": "/precache-manifest.cec2a6285d7d4d454289d5468960e99a.js",
+  "precache-manifest.47152b23edd44b7342b149b9e44db4e4.js": "/precache-manifest.47152b23edd44b7342b149b9e44db4e4.js",
   "service-worker.js": "/service-worker.js"
 }
