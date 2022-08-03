@@ -41,7 +41,7 @@ function App() {
   }
   return (
     <>
-    <Router basename="/website-ebacsi">
+    <Router >
       <div>
         <nav>
           <ul >
