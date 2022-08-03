@@ -58,7 +58,7 @@ function App() {
                 {servicePacks.map((servicePack) => {
                   return(
                       <div key={servicePack.id} className="service-pack-title">
-                          <p> {servicePack.title} </p>
+                          <Link to={`/cacgoidichvuyte/${servicePack.id}`} > <p> {servicePack.title} </p> </Link>
                       </div>
                   );
                 })}
