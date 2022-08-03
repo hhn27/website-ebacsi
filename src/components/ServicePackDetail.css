@@ -1,0 +1,94 @@
+.service-pack-detail-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+.service-pack-detail-header{
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: 50% auto;
+}
+.service-pack-detail-container .feature-image{
+    width: 100%;
+}
+.service-pack-detail-header button{
+    background-color: transparent;
+    border: none;
+}
+.service-pack-detail-header button img{
+    width: 60%;
+}
+.form-hidden{
+    /* visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); */
+    visibility: hidden;
+    position: fixed;
+}
+/* .form-hidden .registerForm-container{
+    opacity: 0;
+} */
+.form-block{
+    visibility: visible;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+}
+.form-block .registerForm-container{
+    width: 40%;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    animation: register-form-animation 300ms;
+}
+@keyframes register-form-animation{
+    from {opacity: 0; transform: scale(0.5)}
+    to {opacity: 1; transform: scale(1)}
+}
+.registerForm-container form{
+    margin-top: 40px;
+}
+.top{
+    height: 30px;
+    background-color: rgba(0,91,170,255);
+}
+.registerForm-container form input[type=text], .registerForm-container form select{
+    display: block;
+    font-size: 16px;
+    border-radius: 1rem;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border: 1px solid rgba(0,91,170,255);
+    width: 80%;
+}
+.registerForm-container form input[type=submit]{
+    display: block;
+    border: 1px solid rgba(0,91,170,255);
+    border-radius: 1rem;
+    padding: 12px 20px;
+    background-color: rgba(0,91,170,255) ;
+    margin: 0 auto;
+    margin-bottom:20px;
+    color: white;
+}
+.close-icon{
+    position: absolute;
+    display: block;
+    /* background-color: antiquewhite; */
+    right: 0;
+    padding: 0 5px;
+    color:white;
+}

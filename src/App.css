@@ -1,0 +1,215 @@
+html {
+  font-family: sans-serif;
+}
+body{
+  margin: 0;
+  /* max-width: 1920px; */
+}
+h3,h4,h5, .blue{
+  color: rgba(0,91,170,255);
+}
+h3{
+  margin-top: 0;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+h4{
+  margin-top: 0;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+h5{
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.h3-white, .h4-white, .p-white, .white{
+  color: white;
+}
+.large{
+  font-size: 25px;
+}
+a{
+  text-decoration: none;
+}
+.text-center{
+  text-align: center;
+}
+.underline img{
+  display: block;
+  margin: 0 auto;
+  /* padding-bottom: 30px; */
+}
+article{
+  box-shadow: 0 5px 15px rgba(107, 107, 107, 0.4);
+  background-color: white;
+  background-color: white;
+  /* text-align: center; */
+}
+p, .grey{
+  color: #79818b;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+ul{
+  list-style-type:none;
+}
+li a{
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.nav-center {
+  width: 1200px;
+  height: 93px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+button{
+  cursor: pointer;
+}
+.link-container {
+  /* background-color: beige; */
+  display: flex;
+  align-items: flex-end;
+}
+.link-container ul{
+  /* background-color: antiquewhite; */
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+/* .link-container li{
+  background-color: aquamarine;
+} */
+nav{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+nav li a{
+  color: rgb(124, 124, 124) ;
+  text-align: center;
+  font-size: 16px;
+}
+.active{
+  color: rgba(0,91,170,255);
+}
+nav ul{
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cart{
+  position: absolute;
+  right: 0;
+  transform: translateX(-200%);
+}
+nav button{
+  padding: 2px 10px;
+  border: none;
+  border-radius: 2rem;
+}
+.medical-service{
+  position: relative;
+}
+.medical-service-category{
+  position: absolute;
+  border-radius: 3px;
+  width: 160%;
+  opacity: 0;
+}
+.medical-service:hover .medical-service-category{
+  height: 300px;
+  overflow-y: scroll;
+  opacity: 1;
+  transition: opacity 500ms;
+  z-index: 2;
+}
+.link-title{
+  margin-bottom: 30px;
+}
+
+footer{
+  min-width: 1200px;
+  background-color: rgba(0,91,170,255);
+  margin-top: 100px;
+}
+.footer-nav{
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: 405px auto;
+}
+.footer-nav ul{
+  display: flex;
+  justify-content: space-between;
+}
+.footer-nav a, .footer-container p{
+  color: white;
+}
+.footer-container{
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: 405px auto;
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.footer-right-side{
+  display: flex;
+  justify-content: space-between;
+}
+footer{
+  padding-top:30px;
+  padding-bottom: 60px;
+}
+.social-image{
+  padding-right: 15px;
+}
+
+.button-page-number-list{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.button-page-number-list button{
+  margin: 0 5px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 2rem;
+}
+.button-page-number-list .button-side, .button-page-number-list .button-next-page{
+  border: 1px solid rgba(148,154,160,255);
+  color: rgba(148,154,160,255);
+}
+.button-page-number-list .button-current{
+  border: 1px solid rgba(0,91,170,255);
+  color: rgba(0,91,170,255);
+}
+.content{
+  margin-top: 30px;
+}
+
+.btn-left-fixed{
+  position: fixed;
+  top: 30%;
+  z-index: 10;
+}
+.btn-left-fixed img{
+  width: 180px;
+}
+.social-contact img{
+  display: block;
+  z-index: 10;
+  width: 80%;
+}
+.social-contact{
+  position: fixed;
+  top: 15%;
+  right: 0;
+  z-index: 10;
+}

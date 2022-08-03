@@ -1,0 +1,28 @@
+.service-pack-page{
+    width: 1200px;
+    margin: 0 auto;
+}
+.items-perpage{
+    display: grid;
+    row-gap: 15px;
+    column-gap: 15px;
+    grid-template-columns: 390px 390px auto;
+}
+.service-pack-image{
+    width: 100%;
+}
+.service-pack-text{
+    padding: 0 15px;
+}
+.seemore{
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+.seemore img{
+    width: 50%;
+}
+.infoDisplay{
+    display: flex;
+}
