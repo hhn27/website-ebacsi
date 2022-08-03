@@ -54,7 +54,7 @@ function App() {
             <li className='medical-service'>
               <Link to="/cacgoidichvuyte" className={linkActive===3 ? 'active' : null} onClick={() => handelLinkClick(3)}> Các gói dịch vụ y tế </Link>
               <article className='medical-service-category'>
-                <p> Tất cả gói khám </p> 
+                <Link to="/cacgoidichvuyte"> <p> Tất cả gói khám </p> </Link>
                 {servicePacks.map((servicePack) => {
                   return(
                       <div key={servicePack.id}>
