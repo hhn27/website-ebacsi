@@ -372,16 +372,7 @@ button.primary{
     right: 0;
     transform: translateY(-50%) translateX(100%) translateX(15px);
 }
-@media only screen and (max-width:1200px) {
-    .network-container{
-        width: 100%;
-    }
-    .hospital{
-        height: 100%;
-    }
-    .hospital-info{
-        grid-template-columns: 23.3% 23.3% 23.3% 23.3% 23.3% 23.3% 23.3%;
-    }
+@media only screen and (max-width:1400px) {
     .hospital-slider .chevron-left{
         top: 50%;
         left: 0;
@@ -391,6 +382,17 @@ button.primary{
         top: 50%;
         right: 0;
         transform: translateY(-50%);
+    }
+}
+@media only screen and (max-width:1200px) {
+    .network-container{
+        width: 100%;
+    }
+    .hospital{
+        height: 100%;
+    }
+    .hospital-info{
+        grid-template-columns: 23.3% 23.3% 23.3% 23.3% 23.3% 23.3% 23.3%;
     }
 }
 @media only screen and (max-width:1024px) {
@@ -857,6 +859,9 @@ button.primary{
     .news-info{
         grid-template-columns: 100%;
         grid-template-rows: auto auto auto auto;
+    }
+    .news{
+        grid-template-columns: 192px auto;
     }
 }
 @media only screen and (max-width: 768px){

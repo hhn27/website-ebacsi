@@ -332,11 +332,19 @@ footer{
 .social-contact img{
   display: block;
   z-index: 10;
-  width: 80%;
+  width: 80px;
 }
 .social-contact{
   position: fixed;
   top: 15%;
   right: 0;
   z-index: 10;
+}
+@media only screen and (max-width:1004px){
+  .btn-left-fixed img{
+    width: 120px;
+  }
+  .social-contact img{
+    width: 60px;
+  }
 }
