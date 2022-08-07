@@ -207,6 +207,9 @@ button.primary{
     }
   }
   @media only screen and (max-width:768px) {
+    .operation-container{
+        height: 110%;
+    }
     .operation-container .iphone{
         display: none;
       }
@@ -223,14 +226,17 @@ button.primary{
         width: 100%;
     }
   }
-  @media only screen and (max-width:600px) {
+  /* @media only screen and (max-width:600px) {
+    .operation-container{
+        height: 120%;
+    }
     .operation-info{
         width: 80%;
         margin: 0 auto;
         grid-template-columns: 100%;
         grid-template-rows: 180px 180px 180px 180px 180px 180px;
     }
-  }
+  } */
 
 .advantage-container{
     width: 1200px;
