@@ -57,42 +57,44 @@ function Home() {
     useEffect(() => {
         loading();
     }, [])
-
+    const hoRef = React.useRef();
+    const hosliRef = React.useRef();
     const hospitalHandleRightClick = () => {
-        const newIndex= index1+1;
-        if(newIndex>hospitals.length-4){
-            newIndex= hospitals.length-4;
+        let newIndex= index1+1;
+        if(newIndex>( hospitals.length- hosliRef.current.offsetWidth/hoRef.current.offsetWidth)){
+            newIndex=hospitals.length - Math.floor(hosliRef.current.offsetWidth/hoRef.current.offsetWidth);
         }
         setIndex1(newIndex);
-        setStyle1({transform: `translateX(-${newIndex*303.75}px)`,transition: 'transform 400ms'});
+        setStyle1({transform: `translateX(-${newIndex*(hoRef.current.offsetWidth+15)}px)`,transition: 'transform 400ms'});
         setIsNext(true);
     }
     const hospitalHandleLeftClick = () => {
-        const newIndex= index1-1;
+        let newIndex= index1-1;
         if(newIndex<0){
-            newIndex(0);
+            newIndex=0;
         }
         setIndex1(newIndex);
-        setStyle1({transform: `translateX(-${newIndex*303.75}px)`, transition: 'transform 400ms'}  );
+        setStyle1({transform: `translateX(-${newIndex*(hoRef.current.offsetWidth+15)}px)`, transition: 'transform 400ms'}  );
         setIsNext(false);
     }
 
+    const doRef= React.useRef()
     const doctorHandleRightClick = () => {
-        const newIndex= index2+1;
+        let newIndex= index2+1;
         if(newIndex>doctors.length-2){
             newIndex= doctors.length-2;
         }
         setIndex2(newIndex);
-        setStyle2({transform: `translateX(-${newIndex*405}px)`,transition: 'transform 400ms'});
+        setStyle2({transform: `translateX(-${newIndex*(doRef.current.offsetWidth+15)}px)`,transition: 'transform 400ms'});
         setIsNext(true);
     }
     const doctorHandleLeftClick = () => {
-        const newIndex= index2-1;
+        let newIndex= index2-1;
         if(newIndex<0){
-            newIndex(0);
+            newIndex=0;
         }
         setIndex2(newIndex);
-        setStyle2({transform: `translateX(-${newIndex*405}px)`, transition: 'transform 400ms'}  );
+        setStyle2({transform: `translateX(-${newIndex*(doRef.current.offsetWidth+15)}px)`, transition: 'transform 400ms'}  );
         setIsNext(false);
     }
 
@@ -218,11 +220,18 @@ function Home() {
                             <p className='p-white'> luôn sẵn sàng hỗ trợ </p> 
                         </div>
                     </div>
-                    <div className='hospital-slider'>
+                    <div className='hospital-slider' ref={hosliRef}>
                         <div className='hospital-wrapper'>
                         
                                 <div className='hospital-info' style={style1} >
-                                        <Hospital hospitals={hospitals} > </Hospital>
+                                {hospitals.map((hospital) => {
+                                    const {id, image} = hospital;
+                                    return(
+                                        <article key={id} className="hospital" ref={hoRef}>
+                                        <img src={image}></img>
+                                        </article>
+                                    );
+                                })}
                                 </div>
         
                         </div>
@@ -250,7 +259,16 @@ function Home() {
                     <div className='doctor-wrapper'>
                         
                                 <div className='doctor-info' style={style2}>
-                                    <Doctor doctors={doctors}></Doctor>
+                                {doctors.map((doctor) => {
+                                    const {id, image, name, info} = doctor;
+                                    return(
+                                        <article key={id} className="doctor" ref={doRef}>
+                                        <img src={image}></img>
+                                        <h4> {name} </h4>
+                                        <p> {info }</p>
+                                        </article>
+                                    );
+                                })}
                                 </div>
                             
                     </div>
@@ -264,8 +282,10 @@ function Home() {
             <img className='banner4' src={banner4} alt='banner4'></img>
             <div className='app-absolute'>
                 <div className='app-container'>
-                    <ReactPlayer width="880px" height="495px" url="https://www.youtube.com/watch?v=vtJLQBnLmrA" playing={false} controls={true} >
-                    </ReactPlayer>
+                    <div className="video-player">
+                        <ReactPlayer width="100%" height="100%" url="https://www.youtube.com/watch?v=vtJLQBnLmrA" playing={false} controls={true} >
+                        </ReactPlayer>
+                    </div>
                     <div className='download'>
                         <img src={qr}></img>
                         <h4> Tải ứng dụng ngay </h4>

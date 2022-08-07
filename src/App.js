@@ -32,6 +32,7 @@ import zalo from './assets/Icon/Website---eBacsi---final---cut_10.png'
 import servicePacks from './data/ServicePacksData';
 import SubPage from './components/SubPage';
 import Introduction from './components/Introduction';
+import HorizontalSplitIcon from '@mui/icons-material/HorizontalSplit';
 
 function App() {
   const color=orange[500];
@@ -39,15 +40,23 @@ function App() {
   const handelLinkClick = (linkIndex) => {
     setLinkActive(linkIndex);
   }
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
+  const openSidebar = () => {
+    setSidebarIsOpen(!sidebarIsOpen);
+
+  }
   return (
     <>
     <Router basename="/website-ebacsi">
       <div>
         <nav>
-          <ul >
-            <li>
+            <div>
               <Link to="/" className={linkActive===1 ? 'active' : null} onClick={() => handelLinkClick(1)}> <img src={logo} alt='logo'></img> </Link>
-            </li>
+            </div>
+            <div className='nav-right'>
+          {/* <div className='btn-sidebar'>  */}
+            <div> <button className={sidebarIsOpen? 'toggle-btn toggle-btn-active' : 'toggle-btn'} onClick={openSidebar}> <HorizontalSplitIcon sx={{fontSize: 30}}></HorizontalSplitIcon> </button> </div>
+          <ul className={sidebarIsOpen? 'nav-links nav-links-active' : 'nav-links'}>
             <li>
               <Link to="/gioithieu" className={linkActive===2 ? 'active' : null} onClick={() => handelLinkClick(2)}> Giới thiệu </Link>
             </li>
@@ -70,8 +79,10 @@ function App() {
             <li>
               <Link to="/dangkynhantuvan" className={linkActive===5 ? 'active' : null} onClick={() => handelLinkClick(5)}> Đăng ký nhận tư vấn </Link>
             </li>
-            <li> <button> Vi </button></li>
-            <li className='cart'>
+            </ul>
+            {/* </div> */}
+          
+            <div className='cart'>
               <Link to="/giohang"> 
                 <Badge badgeContent={2} sx={{
                                               "& .MuiBadge-badge": {
@@ -79,12 +90,15 @@ function App() {
                                                 backgroundColor: color,
                                               }
                                             }}>
-                    <ShoppingCartIcon sx={{ color: "white", stroke: color, strokeWidth: 1, fontSize: 30}} />
+                    <ShoppingCartIcon className='li-cart' sx={{ color: "white", stroke: color, strokeWidth: 1, fontSize: 30}} />
                 </Badge> 
               </Link>
-            </li>
-          </ul>
-        </nav>                                      
+            </div>
+          
+            <div> <button style={{fontSize: 16}}> Vi </button></div>
+            </div>
+        </nav>   
+
         <Routes>
           <Route path="/" element={<Home />}>
           </Route>

@@ -1,12 +1,12 @@
 import React from "react"
 
-const Hospital = ({hospitals}) => {
+const Hospital = ({hospitals,ref}) => {
     return(
         <>
         {hospitals.map((hospital) => {
             const {id, image} = hospital;
             return(
-                <article key={id} className="hospital">
+                <article key={id} className="hospital" ref={ref}>
                 <img src={image}></img>
                 </article>
             );

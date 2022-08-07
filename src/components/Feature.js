@@ -11,8 +11,10 @@ const Feature = ({features}) => {
             return(
                 <article key={id} className="feature">
                 <img className='feature-image' src={image}></img>
+                <div>
                 <Link to={`/cacgoidichvuyte/${id}`}> <h4> {title} </h4> </Link>
-                <div> {parse(`${infoDisplay}...`)} </div> 
+                <div> {parse(`${infoDisplay}...`)} </div>
+                </div> 
                 </article>
             );
         })}

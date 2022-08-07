@@ -3,16 +3,16 @@
 }
 .banner-wrapper{
     width: 100%;
-    min-width: 1200px;
-    height: 640px;
+    
+    aspect-ratio: 3/1;
     position: relative;
     overflow: hidden;
 }
 .banner-wrapper img{
     width: 100%;
-    min-width: 1200px;
-    height: 640px;
-    object-fit: cover;
+    aspect-ratio: 3/1;
+    /* height: 640px;
+    object-fit: cover; */
     position: absolute;
 }
 .banner-enter{
@@ -38,6 +38,7 @@
 .dot-notactive{
     color: rgb(221, 221, 221);
 }
+
 .feature-container{
     width: 1200px;
     margin: 0 auto;
@@ -47,13 +48,13 @@
 .feature-info{
     display: grid;
     column-gap:15px;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 390px 390px 390px;
     grid-template-rows: 430px;
     margin-top: 30px;
 }
 .feature .feature-image{
-    height: 230px;
-    width: 390px;
+    height: auto;
+    width: 100%;
 }
 .feature p, .feature h4 {
     padding: 0 15px;
@@ -75,48 +76,40 @@
     text-decoration: none;
     color: rgba(0,91,170,255);
 }
+@media only screen and (max-width: 1200px){
+    .feature-container{
+        width: 100%;
+    }
+    .feature-info{
+        column-gap:1.5%;
+        grid-template-columns: 32.3% 32.3% 32.3%;
+    }
+}
+@media only screen and (max-width: 1024px){
+    .feature-info{
+        grid-template-rows: 350px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .feature-info{
+        grid-template-columns: 100%;
+        row-gap: 12px;
+        grid-template-rows: auto auto auto;
+    }
+    .feature{
+        display: grid;
+        grid-template-columns: 30% 70%;
+    }
+}
 /* layer2 */
 .banner2{
     width: 100%;
-    min-width: 1200px;
-    height: 100%;
+    aspect-ratio: 16/9;
     object-fit: cover;
 }
 .operation-relative{
     position: relative;
-    height: 779px;
-}
-.operation-info{
-    display: grid;
-    grid-gap: 15px;
-    grid-template-columns: 288.75px 288.75px 288.75px;
-    grid-template-rows:  250px 250px;
-    /* background-color: black; */
-    /* position: absolute;
-    right: 0; */
-}
-.operation-header{
-    display: grid;
-    column-gap: 15px;
-    grid-template-columns: auto auto;
-}
-.operation-header h4{
-    margin-top: 0;
-}
-/* .operation-container{
-    position: relative;
-} */
-.operation{
-    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    background-color: white; */
-    padding: 15px;
-    border-radius: 0.75rem;
-    display: flex;
-flex-direction: column;
-justify-content: space-around;
-}
-.operation p{
-    color: rgb(124, 124, 124);
+    /* height: 779px; */
 }
 .operation-components{
     width: 100%;
@@ -126,17 +119,36 @@ justify-content: space-around;
 }
 .operation-container{
     width: 1200px;
-    /* position: absolute;
-    right: 5px;
-    top: 0; */
     height: 100%;
     margin: 0 auto;
-    /* background-color: antiquewhite; */
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
+}
+.operation-info{
+    /* width: 74.6875%;
+    height: 66.11%; */
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 288.75px 288.75px 288.75px;
+    grid-template-rows: 250px 250px;
+}
+.operation-header{
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: 30% 70%;
+}
+.operation-header h4{
+    margin-top: 0;
+}
+.operation{
+    padding: 15px;
+    border-radius: 0.75rem;
+}
+.operation p{
+    color: rgb(124, 124, 124);
 }
 .operation-container .iphone{
     position: absolute;
@@ -144,11 +156,11 @@ justify-content: space-around;
     left: -100px;
 }
 .operation-title{
-    width: 896.25px;
+    width: 75%;
     text-align: center;
 }
 .button{
-    width: 896.25px;
+    width: 75%;
 }
 .button button{
     display: block;
@@ -164,6 +176,54 @@ button.primary{
     padding: 10px 20px;
     font-weight: bold;
 }
+
+@media only screen and (max-width:1200px) {
+    .operation-container{
+      width: 100%;
+    }
+    .operation-container .iphone{
+      width: 30%;
+      left: -15px;
+    }
+    /* .operation-header img{
+        width: 100%;
+    } */
+    .operation-info{
+        width: 66.66%;
+        grid-row-gap: 1.25%;
+        grid-template-columns: 48.5% 48.5%;
+        grid-template-rows: 250px 250px 250px;
+        overflow-y: scroll;
+    }
+    button.primary{
+        font-size: 11px;
+    }
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgb(177, 177, 177); 
+        border-radius: 5px;
+    }
+  }
+  @media only screen and (max-width:768px) {
+    .operation-container .iphone{
+        display: none;
+      }
+    .operation-info{
+        width: 100%;
+        grid-gap: 1.5%;
+        grid-template-columns: 49.25% 49.25%;
+        grid-template-rows: 200px 200px 200px;
+    }
+    .operation-title{
+        width: 100%;
+    }
+    .button{
+        width: 100%;
+    }
+  }
+
 .advantage-container{
     width: 1200px;
     margin: 0 auto;
@@ -181,21 +241,55 @@ button.primary{
     border-radius: 0.75rem;
     text-align: center;
 }
-.banner3{
-    width: 100%;
-    min-width: 1200px;
-    height: 637px;
-    object-fit: cover;
+
+@media only screen and (max-width:1200px) {
+    .advantage-container{
+        width: 100%;
+    }
+    .advantage-info{
+        grid-gap: 1.5%;
+        grid-template-columns: 32.33% 32.33% 32.33%;
+        grid-template-rows: 280px 280px;
+        
+    }
+    .advantage img{
+        width: 50%;
+    }
+}
+@media only screen and (max-width:768px) {
+    .advantage-info{
+        grid-template-columns: 49.25% 49.25% ;
+        grid-template-rows: 250px 250px;
+    }
 }
 
-.hospital-info{
-    display: flex;
+
+.banner3{
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
 }
-.hospital-info article{
-    width: 288.75px;
+.hospital-slider{
+    position: relative;
     height: 160px;
-    margin-right: 15px;
+    width: 100%;
 }
+.hospital-wrapper{
+    position: relative;
+    width: 100%;
+    height: 105%;
+    overflow: hidden;
+}
+.hospital-info{
+    width: 100%;
+    height: 160px;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 288.75px 288.75px 288.75px 288.75px 288.75px 288.75px 288.75px;
+    grid-template-rows: 100%;
+    position: absolute;
+}
+
 .hospital img{
     width: 60%;
     position: absolute;
@@ -205,14 +299,11 @@ button.primary{
 }
 .hospital{
     border-radius: 0.75rem;
+    width: 100%;
     /* text-align: center; */
     overflow: hidden;
     position: relative;
 }
-/* .hospital img{
-    height: 160px;
-    width: auto;
-} */
 .number-employee{
     width: 100%;
     display: flex;
@@ -220,7 +311,7 @@ button.primary{
     text-align: center;
 }
 .network-relative{
-    height: 637px;
+    /* height: 637px; */
     position: relative;
 }
 .network-components{
@@ -231,21 +322,14 @@ button.primary{
 }
 .network-container{
     width: 1200px;
-    /* position: absolute;
-    right: 5px;
-    top: 0; */
     height: 100%;
     margin: 0 auto;
-    /* background-color: antiquewhite; */
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
-/* .number-employee div{
-    padding: 0 60px;
-} */
 .number-employee h3, .number-employee h4, .number-employee p{
     text-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     margin-top: 0;
@@ -271,6 +355,53 @@ button.primary{
     right: 0;
     transform: translateY(-50%) translateX(100%) translateX(15px);
 }
+@media only screen and (max-width:1200px) {
+    .network-container{
+        width: 100%;
+    }
+    .hospital{
+        height: 100%;
+    }
+    .hospital-info{
+        grid-template-columns: 23.3% 23.3% 23.3% 23.3% 23.3% 23.3% 23.3%;
+    }
+    .hospital-slider .chevron-left{
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .hospital-slider .chevron-right{
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
+@media only screen and (max-width:1024px) {
+    .number-employee h3, .number-employee h4, .number-employee p{
+        margin-bottom: 10px;
+    }
+    .number-employee div h3{
+        font-size: 45px;
+    }
+    .hospital-slider{
+        height: 120px;
+    }
+    .hospital-info{
+        height: 120px;
+    }
+}
+@media only screen and (max-width:768px) {
+    .number-employee div h3{
+        font-size: 24px;
+    }
+    .number-employee h3, .number-employee h4, .number-employee p{
+        margin-bottom: 0px;
+    }
+    .hospital-info{
+        grid-template-columns: 200px 200px 200px 200px 200px 200px 200px 200px;
+    }
+}
+
 .doctor-container{
     width: 1200px;
     margin: 0 auto;
@@ -292,27 +423,30 @@ button.primary{
 .doctor-relative{
     position: relative;
     width: 100%;
-    height: 475px;
+    height: 460px;
 }
 .doctor-wrapper{
-    /* width: 795px; */
-    height: 460px;
+    width: 100%;
+    height: 475px;
     position: relative;
     overflow: hidden;
     padding-bottom: 10px;
 }
 .doctor-info{
-    display: flex;
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: 390px 390px 390px 390px;
+    grid-template-rows: 460px;
     position: absolute;
 }
 .doctor-info article{
-    width: 390px;
-    height: 460px;
+    width: 100%;
+    height: 100%;
     margin-right: 15px;
+    border-radius: 0.5rem;
 }
 .doctor-info img{
     width: 90%;
-    height: 60%;
 }
 .doctor-relative .chevron-left{
     left: 0;
@@ -327,6 +461,46 @@ button.primary{
 .doctor{
     /* padding: 0 15px; */
     text-align: center;
+}
+@media only screen and (max-width:1200px) {
+    .doctor-container{
+        width: 100%;
+        height: 350px;
+    }
+    .doctor-relative{
+        height: 300px;
+    }
+    .doctor-wrapper{
+        height: 105%;
+    }
+    .doctor-grid{
+        column-gap: 1.25%;
+        grid-template-columns: 32.91% auto;
+    }
+    .doctor-info{
+        height: 95%;
+        grid-template-columns: 49.3% 49.3% 49.3% 49.3%;
+        grid-template-rows: 100%;
+    }
+    .doctor-relative .chevron-left{
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .doctor-relative .chevron-right{
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
+@media only screen and (max-width:768px) {
+    .doctor-relative{
+        height: 250px;
+    }
+    .doctor-grid{
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+    }
 }
 
 .operation{
@@ -343,8 +517,7 @@ button.primary{
 }
 .banner4{
     width: 100%;
-    min-width: 1200px;
-    height: 1009px;
+    aspect-ratio: 16/9;
     object-fit: cover;
 }
 .app-absolute{
@@ -354,6 +527,7 @@ button.primary{
 }
 .app-container{
     width: 1200px;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -364,7 +538,7 @@ button.primary{
 }
 .feedback-components{
     position: absolute;
-    bottom: 100px;
+    bottom: -80px;
     width: 100%;
 }
 .feedback-container{
@@ -376,6 +550,7 @@ button.primary{
     justify-content: space-around;
     align-items: center;
     position: relative;
+    border-radius: 0.5rem;
 }
 
 .feedback-container .chevron-left{
@@ -421,6 +596,59 @@ button.primary{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.video-player{
+    width: 880px;
+    height: 495px;
+}
+.download{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+@media only screen and (max-width:1400px){
+    .app-container{
+        width: 100%;
+    }
+    .feedback-container{
+        width: 70%;
+        height: 400px;
+    }
+    .video-player{
+        width: 65%;
+        height: auto;
+    }
+    .download{
+        width: 18%;
+    }
+    .download img{
+        width: 100%;
+    }
+}
+@media only screen and (max-width:1004px){
+    .feedback-container{
+        height: 350px;
+    }
+}
+@media only screen and (max-width:768px){
+    .feedback-components{
+        bottom: -200px;
+    }
+    .feedback-container{
+        width: 95%;
+        height: 350px;
+    }
+    .feedback-container .chevron-left{
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%)
+    }
+    .feedback-container .chevron-right{
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 .next-feed-enter .feedback{
     transform: translateX(166.5px);
@@ -544,26 +772,6 @@ button.primary{
     transition: all 300ms;
 }
 
-.download{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-}
-
-.hospital-slider{
-    position: relative;
-}
-.hospital-wrapper{
-    position: relative;
-    width: 1200px;
-    height: 160px;
-    overflow: hidden;
-}
-.hospital-info {
-    position: absolute;
-}
-
 .feedback-slider{
     position: relative;
     margin-top: 30px;
@@ -576,15 +784,13 @@ button.primary{
 }
 .news-info{
     display: grid;
-    /* column-gap: 15px; */
     grid-template-columns: 623px auto;
+    grid-gap: 15px;
     margin-top: 30px;
 }
 .latestNews{
+    padding-right: 15px;
     border-right: 0.5px solid rgba(148,154,160,255);
-}
-.latestNews h4, .latestNews p{
-    margin-right: 15px;
 }
 .latestNews img{
     width: 608px;
@@ -597,18 +803,12 @@ button.primary{
     object-fit: cover;
 }
 .news{
-    padding-bottom: 15px;
+    padding: 0 15px 15px 0px;
     display: grid;
     column-gap: 15px;
     grid-template-columns: auto auto;
     margin-bottom: 30px;
     border-bottom: 0.5px solid rgba(148,154,160,255);
-}
-.right-side-news{
-    margin-left: 15px;
-}
-.news{
-    margin-left: 15px;
 }
 .news p{
     font-size: 13px;
@@ -616,19 +816,38 @@ button.primary{
     padding-top: 0;
 }
 
-/* .hotline{
-    position: fixed;
-    top: 30%;
+@media only screen and (max-width: 1200px){
+    .news-container{
+        width: 100%;
+    }
+    .latestNews img{
+        width: 100%;
+        height: auto;
+    }
+    .news-info{
+        width: 100%;
+        grid-template-columns: 44.5% 44.5%;
+    }
+}
+@media only screen and (max-width: 1024px){
+    .latestNews{
+        border-right: none;
+        border-bottom: 0.5px solid rgba(148,154,160,255);
+    }
+    .news-container{
+        margin-top: 120px;
+    }
+    .news-info{
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto;
+    }
+}
+@media only screen and (max-width: 768px){
+    .news-container{
+        margin-top: 230px;
+    }
 }
 
-.social-contact img{
-    display: block;
-}
-.social-contact{
-    position: fixed;
-    top: 15%;
-    right: 0;
-} */
 
 
 
