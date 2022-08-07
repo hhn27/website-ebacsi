@@ -3,7 +3,7 @@ const servicePacks = [
     {
         id: 1,
         image: "https://firebasestorage.googleapis.com/v0/b/website-ebacsi.appspot.com/o/ServicePacks%2FhauCovid.jpg?alt=media&token=75c042cd-fc66-4f5e-83f5-f492e4c7494b",
-        title: "Gói khám sức khỏa hậu covid-19",
+        title: "Gói khám sức khỏe hậu covid-19",
         info: `<p>-	<strong>Định nghĩa gói khám</strong>: Gói kiểm tra sức khỏe hậu Covid-19 nâng cao giúp đánh giá, chẩn đoán, điều trị và dự phòng các yếu tố nguy cơ của hội chứng hậu Covid-19</p>
                 <p>- <strong>Địa chỉ</strong>: Bệnh viện Đa khoa Bưu điện TPHCM - Lô B9, Thành Thái, P.15, Q.10, TP. Hồ Chí Minh</p>`,
         detail: `

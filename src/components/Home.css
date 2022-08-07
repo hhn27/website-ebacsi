@@ -223,6 +223,14 @@ button.primary{
         width: 100%;
     }
   }
+  @media only screen and (max-width:600px) {
+    .operation-info{
+        width: 80%;
+        margin: 0 auto;
+        grid-template-columns: 100%;
+        grid-template-rows: 180px 180px 180px 180px 180px 180px;
+    }
+  }
 
 .advantage-container{
     width: 1200px;
@@ -262,6 +270,15 @@ button.primary{
         grid-template-rows: 250px 250px;
     }
 }
+@media only screen and (max-width:600px) {
+    .advantage-info{
+        grid-template-columns: 100%;
+        grid-template-rows: 250px 250px;
+    }
+    .advantage img{
+        width: 30%;
+    }
+  }
 
 
 .banner3{
