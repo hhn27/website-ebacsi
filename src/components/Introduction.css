@@ -8,3 +8,9 @@
 .introduction-detail{
     margin-top: 30px;
 }
+
+@media only screen and (max-width:1200px){
+    .introduction-container{
+        width: 100%;
+    }
+}

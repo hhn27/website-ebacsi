@@ -39,23 +39,25 @@ function NewsDetail() {
     const [index,setIndex] = useState(0);
     const [isNext,setIsNext] = useState(false);
     const [style,setStyle] = useState({transform: 'translateX(0)'});
+    const sgRef = React.useRef();
+    const sgSliRef = React.useRef();
     
     const handleRightClick = () => {
-        const newIndex= index+1;
-        if(newIndex>suggestionNews.length-3){
-            newIndex= suggestionNews.length-3;
+        let newIndex= index+1;
+        if(newIndex>(suggestionNews.length-sgSliRef.current.offsetWidth/sgRef.current.offsetWidth)){
+            newIndex= suggestionNews.length-Math.floor(sgSliRef.current.offsetWidth/sgRef.current.offsetWidth);
         }
         setIndex(newIndex);
-        setStyle({transform: `translateX(-${newIndex*405}px)`,transition: 'transform 400ms'});
+        setStyle({transform: `translateX(-${newIndex*(sgRef.current.offsetWidth+15)}px)`,transition: 'transform 400ms'});
         setIsNext(true);
     }
     const handleLeftClick = () => {
-        const newIndex= index-1;
+        let newIndex= index-1;
         if(newIndex<0){
-            newIndex(0);
+            newIndex=0;
         }
         setIndex(newIndex);
-        setStyle({transform: `translateX(-${newIndex*405}px)`, transition: 'transform 400ms'}  );
+        setStyle({transform: `translateX(-${newIndex*(sgRef.current.offsetWidth+15)}px)`, transition: 'transform 400ms'}  );
         setIsNext(false);
     }
 
@@ -66,7 +68,7 @@ function NewsDetail() {
     }
     else{
     return(
-        <div className="news-detail">
+        <div className="news-detail-container">
             <div className="link-title"> <Link to='/' className="blue"> Home </Link > <span className="blue"> {`>>`} </span> <Link to='/tintuc' className="blue"> Tin tức </Link> <span className="blue"> {`>>`} </span> <span className="grey"> {newsCategory.name} </span> </div>
             <div className="title">
                 <h4 className="uppercase"> {newsDetail.title} </h4>
@@ -81,13 +83,13 @@ function NewsDetail() {
                 <p className="news-inf"> <strong> {newsDetail.info} </strong></p>
                 <p> {newsDetail.detail} </p>
             </div>
-            <div className="suggestion-news-container">
+            <div className="suggestion-news-slider" ref={sgSliRef}>
                 <div className="suggestion-news-wrapper">
                     <div className="suggestion-news" style={style}>
                         {suggestionNews.map((snews) => {
                             const suggestionNewsCategory = newsCategories.find(newsCategory => newsCategory.name===snews.category);
                             return(
-                                <article>
+                                <article key={snews.id} ref={sgRef}>
                                     <img src={snews.image}></img>
                                     <div className="suggestion-news-text">
                                     <Link to={`/tintuc/${suggestionNewsCategory.id}/${snews.id}`}><h5>{snews.title} </h5> </Link>

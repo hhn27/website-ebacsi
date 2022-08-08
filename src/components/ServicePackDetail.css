@@ -92,3 +92,17 @@
     padding: 0 5px;
     color:white;
 }
+
+@media only screen and (max-width:1200px) {
+    .service-pack-detail-container{
+        width: 100%;
+    }
+    .form-block .registerForm-container{
+        width: 50%;
+    }
+}
+@media only screen and (max-width:768px) {
+    .form-block .registerForm-container{
+        width: 80%;
+    }
+}

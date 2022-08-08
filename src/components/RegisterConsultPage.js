@@ -50,9 +50,9 @@ function RegisterConsultPage() {
     return(
     <>
         { isLoading? <Loading></Loading> :
-            <div className="register-consult">
+            <div className="register-consult-container">
                 <div> <Link to='/' className="blue"> Home </Link> <span className="blue">{`>>`} </span> <Link to='/dangkynhantuvan' className="blue"> Đăng ký nhận thông tin tư vấn </Link> </div>
-                <article className="register-consult-container">
+                <article className="register-consult">
                     <h3 className="register-consult-title uppercase text-center"> Bạn cần tìm hiểu thêm thông tin về sản  phẩm </h3>
                     <p className="text-center"> Vui lòng liên hệ hotline 19001544 hoặc gửi thông tin của bạn để được hỗ trợ </p>
                     <form className="register-consult-form" onSubmit={(e) => handleSubmit(e)}>

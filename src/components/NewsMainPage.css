@@ -31,3 +31,9 @@
     margin-bottom: 30px;
     border-bottom: 0.5px solid rgba(148,154,160,255);
 }
+
+@media only screen and (max-width:1200px){
+    .news-list{
+        width: 100%;
+    }
+}

@@ -46,7 +46,7 @@ function ServicePack() {
                     {filteredItems.map((servicePack) => {
                         const infoDisplay = servicePack.info.length>=150 ? servicePack.info.slice(0, 150) : servicePack.info;
                         return(
-                        <article key={servicePack.id}>
+                        <article key={servicePack.id} className="service-pack-item">
                             <img className="service-pack-image" src={servicePack.image}></img>
                             <div className="service-pack-text">
                                 <h4> {servicePack.title} </h4>
